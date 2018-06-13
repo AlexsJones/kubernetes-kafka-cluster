@@ -1,0 +1,9 @@
+replicas: 3
+memoryrequest: 0.5G
+kafkaopts: "-Dlogging.level=INFO -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+javaopts: "-Xmx512m -Xms512m"
+cpurequest: 0.5
+storagesize: 1Gi
+zookeeperconnectionstring: zk-cs.zk.svc.cluster.local:2181
+image: gcr.io/google_containers/kubernetes-kafka:1.0-10.2.1
+datadogapikey: NOT_SET
