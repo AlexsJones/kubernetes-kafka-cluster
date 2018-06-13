@@ -16,3 +16,9 @@
 `kubectl exec kafka-0 -- kafka-topics.sh --zookeeper zk-cs.zk.svc.cluster.local:2181 --list`
 
 `kubectl exec kafka-0 -- kafka-console-producer.sh --broker-list zk-hs.zk.svc.cluster.local:9092 --topic test`
+
+## Testing
+
+`kubectl run curl --image=radial/busyboxplus:curl -i --tty` useful for debugging inter node connections
+
+`kubectl create -f test/pod.yaml` for load testing the cluster (delete to shutdown) _defaults to three node config_

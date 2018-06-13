@@ -11,19 +11,13 @@ data:
     #  kafka_timeout: 5
 
     instances:
-      # - kafka_connect_str: localhost:9092
-      #   zk_connect_str: localhost:2181
-      #   zk_prefix: /0.8
+       - kafka_connect_str: localhost:9093
+         zk_connect_str: {{.zookeeperconnectionstring}}
+         zk_prefix: /0.8
       #   consumer_groups:
       #     my_consumer:
       #       my_topic: [0, 1, 4, 12]
   kafka.yaml: |-
-    ##########
-    # WARNING
-    # This sample works only for Kafka >= 0.8.2.
-    # If you are running a version older than that, you can refer to agent 5.2.x released
-    # sample files, https://raw.githubusercontent.com/DataDog/dd-agent/5.2.1/conf.d/kafka.yaml.example
-
     instances:
       - host: localhost
         port: 9999 # This is the JMX port on which Kafka exposes its metrics (usually 9999)
