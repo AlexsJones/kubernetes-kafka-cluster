@@ -60,10 +60,11 @@ spec:
         command:
         - sh
         - -c
-        - "exec kafka-server-start.sh /opt/kafka/config/server.properties --override broker.id=${HOSTNAME##*-} \
+        - "rm -rf /var/lib/kafka/lost+found && exec kafka-server-start.sh /opt/kafka/config/server.properties --override broker.id=${HOSTNAME##*-} \
           --override listeners=PLAINTEXT://:9093 \
           --override zookeeper.connect={{.zookeeperconnectionstring}} \
           --override log.dir=/var/lib/kafka \
+          --override log.dirs=/var/lib/kafka \
           --override auto.create.topics.enable=true \
           --override auto.leader.rebalance.enable=true \
           --override background.threads=10 \
@@ -157,6 +158,9 @@ spec:
         volumeMounts:
         - name: datadir
           mountPath: /var/lib/kafka
+        - name: kafkaconfigmap
+          mountPath: /var/log4j.properties
+          subPath: log4j.properties
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
@@ -164,6 +168,9 @@ spec:
       - name: datadogconfigmap
         configMap:
           name: datadogconfigmap
+      - name: kafkaconfigmap
+        configMap:
+          name: kafkaconfigmap
   volumeClaimTemplates:
   - metadata:
       name: datadir

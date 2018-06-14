@@ -1,6 +1,6 @@
 replicas: 5
 memoryrequest: 12G
-kafkaopts: "-Dlogging.level=INFO -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+kafkaopts: "-Dlog4j.configuration=file:/var/log4j.properties -Dlogging.level=INFO -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
 javaopts: "-Xmx6G -Xms6G"
 cpurequest: 4
 storagesize: 1Gi

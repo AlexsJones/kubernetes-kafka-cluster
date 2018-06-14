@@ -17,6 +17,7 @@ data:
       #   consumer_groups:
       #     my_consumer:
       #       my_topic: [0, 1, 4, 12]
+
   kafka.yaml: |-
     instances:
       - host: localhost
