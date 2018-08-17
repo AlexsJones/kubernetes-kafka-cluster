@@ -2,7 +2,6 @@
 
 ## Requirements
 
-- Datadog key set in environments/$environment.yaml for monitoring
 
 - `go get github.com/AlexsJones/vortex`
 
