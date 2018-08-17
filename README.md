@@ -22,8 +22,15 @@ unset JMX_PORT; kafka-console-producer.sh --broker-list zk-hs.zk.svc.cluster.loc
 unset JMX_PORT; kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9093 --topic test --time -1 --offsets 1 | awk -F ':' '{sum += $3} END {print sum}'
 ```
 
+## Drop messages
+
+```
+unset JMX_PORT; kafka-topics.sh --zookeeper zk-cs.zk.svc.cluster.local:2181 --alter --topic $QUEUENAME --config retention.ms=1000
+```
+
 ## Testing
 
 `kubectl run curl --image=radial/busyboxplus:curl -i --tty` useful for debugging inter node connections
 
 `kubectl create -f test/pod.yaml` for load testing the cluster (delete to shutdown) _defaults to three node config_
+
