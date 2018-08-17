@@ -36,17 +36,6 @@ spec:
                  topologyKey: "kubernetes.io/hostname"
       terminationGracePeriodSeconds: 30
       containers:
-      - name: datadog
-        image: datadog/agent:latest-jmx
-        env:
-        - name: DD_LOGS_ENABLED
-          value: "true"
-        - name: DD_API_KEY
-          value: {{.datadogapikey}}
-        volumeMounts:
-          - name: datadogconfigmap
-            mountPath: /etc/datadog-agent/conf.d/kafka.yaml
-            subPath: kafka.yaml
       - name: kafka
         imagePullPolicy: Always
         image: {{.image}}
@@ -56,6 +45,7 @@ spec:
             cpu: "{{.cpurequest}}"
         ports:
         - containerPort: 9093
+        - containerPort: 9999
           name: server
         command:
         - sh
@@ -165,9 +155,6 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       volumes:
-      - name: datadogconfigmap
-        configMap:
-          name: datadogconfigmap
       - name: kafkaconfigmap
         configMap:
           name: kafkaconfigmap
