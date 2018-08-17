@@ -28,6 +28,12 @@ unset JMX_PORT; kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list loca
 unset JMX_PORT; kafka-topics.sh --zookeeper zk-cs.zk.svc.cluster.local:2181 --alter --topic $QUEUENAME --config retention.ms=1000
 ```
 
+## Delete topic
+
+```
+./kafka-run-class.sh kafka.admin.TopicCommand --delete --topic jobs --zookeeper zk-cs.zk.svc.cluster.local:2181
+```
+
 ## Testing
 
 `kubectl run curl --image=radial/busyboxplus:curl -i --tty` useful for debugging inter node connections
