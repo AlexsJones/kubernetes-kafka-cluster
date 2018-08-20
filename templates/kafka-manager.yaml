@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: kafka-manager
+  namespace: {{.namespace}}
+  labels:
+    app: kafka-manager
+    component: kafka
+    role: tool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-manager
+      component: kafka
+      role: tool
+  template:
+    metadata:
+      labels:
+        app: kafka-manager
+        component: kafka
+        role: tool
+    spec:
+      containers:
+      - name: kafka-manager
+        image: solsson/kafka-manager:latest
+        ports:
+        - name: http
+          containerPort: 9000
+        env:
+        - name: ZK_HOSTS
+          value: "{{ .zookeeperconnectionstring }}"
