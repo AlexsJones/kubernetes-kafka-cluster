@@ -34,7 +34,7 @@ unset JMX_PORT; kafka-topics.sh --zookeeper zk-cs.zk.svc.cluster.local:2181 --al
 ## Delete topic
 
 ```
-./kafka-run-class.sh kafka.admin.TopicCommand --delete --topic jobs --zookeeper zk-cs.zk.svc.cluster.local:2181
+./kafka-run-class.sh kafka.admin.TopicCommand --delete --topic test --zookeeper zk-cs.zk.svc.cluster.local:2181
 ```
 
 ## Testing
