@@ -10,7 +10,7 @@
 ## Resources
 
 - https://cwiki.apache.org/confluence/display/KAFKA/Replication+tools
-
+- https://gist.github.com/ursuad/e5b8542024a15e4db601f34906b30bb5
 ## Example
 
 _from the pod_
