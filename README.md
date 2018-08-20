@@ -7,6 +7,9 @@
 
 - Also requires Zookeeper https://github.com/AlexsJones/kubernetes-zookeeper-cluster.git
 
+## Resources
+
+- https://cwiki.apache.org/confluence/display/KAFKA/Replication+tools
 
 ## Example
 
