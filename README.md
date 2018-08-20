@@ -11,6 +11,12 @@
 
 - https://cwiki.apache.org/confluence/display/KAFKA/Replication+tools
 
+
+## Kafka manager UI
+
+- Port forward the kafka-manager
+`kubectl port-forward kafka-manager-686665c975-ck99c :9000`
+
 ## Example
 
 _from the pod_
