@@ -9,4 +9,4 @@ spec:
     command:
       - sh
       - -c
-      - sangrenel -producers 10 -size 1024 -brokers "kafka-0.kafka.kafka.svc.cluster.local:9093,kafka-1.kafka.kafka.svc.cluster.local:9093,kafka-2.kafka.kafka.svc.cluster.local:9093"
+      - sangrenel -producers 10 -size 1024 -brokers "kafka.kafka.svc.cluster.local:9093"

@@ -1,0 +1,18 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kafka-manager
+  namespace: {{.namespace}}
+  labels:
+    app: kafka-manager
+    component: kafka
+    role: tool
+spec:
+  ports:
+  - name: http
+    port: 9000
+  selector:
+    app: kafka-manager
+    component: kafka
+    role: tool

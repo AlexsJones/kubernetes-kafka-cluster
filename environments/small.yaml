@@ -1,5 +1,6 @@
 replicas: 3
 memoryrequest: 0.5G
+namespace: kafka
 kafkaopts: "-Dlog4j.configuration=file:/var/log4j.properties -Dlogging.level=INFO -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
 javaopts: "-Xmx512m -Xms512m"
 cpurequest: 0.5
