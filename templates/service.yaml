@@ -8,9 +8,9 @@ metadata:
 spec:
   ports:
   - port: 9999
-    name: http-jmx
+    name: tcp-jmx
   - port: 9093
-    name: http-server
+    name: tcp-server
   clusterIP: None
   selector:
     app: kafka
