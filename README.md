@@ -26,9 +26,9 @@ unset JMX_PORT; kafka-topics.sh --create --zookeeper zk-cs.zk.svc.cluster.local:
 
 unset JMX_PORT; kafka-topics.sh --zookeeper zk-cs.zk.svc.cluster.local:2181 --list
 
-unset JMX_PORT; kafka-console-producer.sh --broker-list zk-hs.zk.svc.cluster.local:9092 --topic test
+unset JMX_PORT; kafka-console-producer.sh --broker-list zk-hs.zk.svc.cluster.local:7004 --topic test
 
-unset JMX_PORT; kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9093 --topic test --time -1 --offsets 1 | awk -F ':' '{sum += $3} END {print sum}'
+unset JMX_PORT; kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:7004 --topic test --time -1 --offsets 1 | awk -F ':' '{sum += $3} END {print sum}'
 ```
 
 ## Drop messages
