@@ -47,14 +47,14 @@ spec:
             memory: "{{.memoryrequest}}"
             cpu: "{{.cpurequest}}"
         ports:
-        - containerPort: 9093
+        - containerPort: 7004
         - containerPort: 9999
           name: server
         command:
         - sh
         - -c
         - "rm -rf /var/lib/kafka/lost+found && exec kafka-server-start.sh /opt/kafka/config/server.properties --override broker.id=${HOSTNAME##*-} \
-          --override listeners=PLAINTEXT://:9093 \
+          --override listeners=PLAINTEXT://:7004 \
           --override zookeeper.connect={{.zookeeperconnectionstring}} \
           --override log.dir=/var/lib/kafka \
           --override log.dirs=/var/lib/kafka \
