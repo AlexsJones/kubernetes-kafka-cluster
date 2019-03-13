@@ -9,7 +9,7 @@ spec:
   ports:
   - port: 9999
     name: tcp-jmx
-  - port: 9093
+  - port: 7004
     name: tcp-server
   clusterIP: None
   selector:
