@@ -13,6 +13,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "false" #This really doesn't play well with istio yet
       labels:
         app: kafka
     spec:
