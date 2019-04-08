@@ -11,6 +11,5 @@ spec:
     name: tcp-jmx
   - port: 7004
     name: tcp-server
-  clusterIP: None
   selector:
     app: kafka
